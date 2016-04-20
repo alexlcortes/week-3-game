@@ -3,20 +3,26 @@
 	<head>
 		<meta charset= "UTF-8">
 		<title>psych game</title>
+		<!-- Latest compiled and minified CSS -->
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	</head>
 	<body>
+
+	<div class="container">
 		<div id="game">
 			<h1>Psych Game</h1>
 				<h4>Guess what letter I am thinking. <strong>PRESS</strong> any letter to begin...</h4>
 				<h5>You have ten guesses. If you run out of guesses I will pick a new letter and you will have ten new guesses.</h5>
 
 		</div>
+		<div class="panel panel-default">
 			<ul style = "list-style-type: none">
 				<li id="wins"></li>
 				<li id="loses"></li>
 				<li id="chances"></li>
 				<li id="guesses"></li>
 			</ul>
+		</div>
 
 		<script type="text/javascript">
 		var wins = 0;
@@ -70,5 +76,6 @@ randomString();
 
 
 		</script>
+		</div>
 	</body>
 </html>
