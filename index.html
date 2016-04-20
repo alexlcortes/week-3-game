@@ -1,0 +1,64 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset= "UTF-8">
+		<title>psych game</title>
+	</head>
+	<body>
+		<div id="game">
+			<h1>Psych Game</h1>
+				<h4>Guess what Letter I am thinking. <strong>PRESS</strong> any letter to begin...</h4>
+
+		</div>
+			<ul style = "list-style-type: none">
+				<li id="wins"></li>
+				<li id="loses"></li>
+				<li id="chances"></li>
+				<li id="guesses"></li>
+			</ul>
+
+		<script type="text/javascript">
+		var wins = 0;
+		var loses = 0;
+		var chances = 7;
+		var guesses = [];
+
+		function randomString() {
+			var chars = "abcdefghiklmnopqrstuvwxyz";
+			var string_length = 1;
+			var randomstring = '';
+			for (var i=0; i<string_length; i++) {
+			var rnum = Math.floor(Math.random() * chars.length);
+			randomstring += chars.substring(rnum,rnum+1);
+			console.log(randomstring);
+		}
+
+
+		document.onkeyup = function(event) {
+			var userGuess = String.fromCharCode(event.keyCode).toLowerCase();
+			console.log(userGuess);
+			guesses.push(userGuess);
+			console.log(guesses);
+
+			if (userGuess == randomstring) {
+				console.log("You read my mind...")
+				wins ++;
+			} else {
+				console.log("Nice try.")
+				chances --;
+			}
+
+
+	document.getElementById("wins").innerHTML = "Wins = " + wins;
+	document.getElementById("loses").innerHTML = "Loses = " + loses;
+	document.getElementById("chances").innerHTML = "Chances Left = " + chances;
+	document.getElementById("guesses").innerHTML = "Your Guesses So Far = " + guesses;
+	}
+}
+
+
+randomString();
+
+		</script>
+	</body>
+</html>
